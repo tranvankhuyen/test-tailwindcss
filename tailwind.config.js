@@ -1,9 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./dist/index.html", "./src/style.css"],
+  content: ["index.html", "./src/input.css"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary_dark: 'rgb(var(--primary-color-dark))',
+        primary_light: 'rgb(var(--primary-color-light))',
+        background_dark: 'rgb(var(--background-color-dark))',
+        background_light: 'rgb(var(--background-color-light))',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('prettier-plugin-tailwindcss')],
+
   darkMode: 'class',
 }
